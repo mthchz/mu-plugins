@@ -2,7 +2,7 @@
 /*
     MU Plugin: Paramètres généraux
     Description: Parémètres généraux pour Wordpress
-    Author: Mathieu Cheze (proximit)
+    Author: Mathieu Cheze
     Version: 1.0
 */
 
