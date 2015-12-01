@@ -1,5 +1,5 @@
-# Basing Must-Use plugins (mu-plugins)
-Basing configuration for Wordpress.
+# Basic Must-Use plugins (mu-plugins)
+Basic configuration for Wordpress.
 
 ## Usages
 If doesn't exist, create mu-plugins directory on wp-content/. *(Not inside wp-content/plugins !)*
