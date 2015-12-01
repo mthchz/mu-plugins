@@ -1,7 +1,7 @@
 <?php
 /*
-    MU Plugin: Basics WP Configuration
-    Description: Basics configuration for Wordpress
+    MU Plugin: Basic WP Configuration
+    Description: Basic configuration for Wordpress
     Author: Mathieu Cheze
     Version: 1.1
 */
