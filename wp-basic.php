@@ -2,7 +2,8 @@
 /*
     MU Plugin: Basic WP Configuration
     Description: Basic configuration for Wordpress
-    Author: Mathieu Cheze
+    Author: Mathieu Cheze (Proximit Agency)
+    Author URI: http://www.proximit-agency.fr/
     Version: 1.1
 */
 
