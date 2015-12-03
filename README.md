@@ -9,6 +9,7 @@ Put .php script on the mu-plugins root directory : *wp-content/mu-plugins/my-php
 [Codex:Must Use Plugins](https://codex.wordpress.org/Must_Use_Plugins).
 
 ## Features
+* Allow SVG through WordPress Media Uploader
 * Remove the \<div\> surrounding the dynamic navigation to cleanup markup
 * Remove Injected classes, ID's and Page ID's from Navigation \<li\> items
 * Remove invalid rel attribute values in the categorylist

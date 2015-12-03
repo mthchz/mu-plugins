@@ -7,6 +7,14 @@
     Version: 1.1
 */
 
+/* Allow SVG through WordPress Media Uploader
+*******************************************************************************/
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
 /* Remove the <div> surrounding the dynamic navigation to cleanup markup
 *******************************************************************************/
 function my_wp_nav_menu_args($args = '') {
