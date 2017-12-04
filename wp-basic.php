@@ -4,29 +4,26 @@
     Description: Basic configuration for Wordpress
     Author: Mathieu Cheze (Proximit Agency)
     Author URI: http://www.proximit-agency.fr/
-    Version: 1.1
+    Version: 1.2
 */
 
 /* Allow SVG through WordPress Media Uploader
 *******************************************************************************/
-function cc_mime_types($mimes) {
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
-}
-add_filter('upload_mimes', 'cc_mime_types');
+//function cc_mime_types($mimes) {
+//  $mimes['svg'] = 'image/svg+xml';
+//  return $mimes;
+//}
+//add_filter('upload_mimes', 'cc_mime_types');
 
-/* Remove the <div> surrounding the dynamic navigation to cleanup markup
+/* Remove wp version param from any enqueued scripts
 *******************************************************************************/
-function my_wp_nav_menu_args($args = '') {
-    $args['container'] = false;
-    return $args;
+function remove_ver_css_js( $src ) {
+    if ( strpos( $src, 'ver=' ) )
+        $src = remove_query_arg( 'ver', $src );
+    return $src;
 }
-
-/* Remove Injected classes, ID's and Page ID's from Navigation <li> items
-*******************************************************************************/
-function my_css_attributes_filter($var) {
-    return is_array($var) ? array() : '';
-}
+add_filter( 'style_loader_src', 'remove_ver_css_js', 9999 );
+add_filter( 'script_loader_src', 'remove_ver_css_js', 9999 );
 
 /* Remove invalid rel attribute values in the categorylist
 *******************************************************************************/
