@@ -25,6 +25,14 @@ function remove_ver_css_js( $src ) {
 add_filter( 'style_loader_src', 'remove_ver_css_js', 9999 );
 add_filter( 'script_loader_src', 'remove_ver_css_js', 9999 );
 
+/* Remove the <div> surrounding the dynamic navigation to cleanup markup
+*******************************************************************************/
+function my_wp_nav_menu_args($args = '') {
+    $args['container'] = false;
+    return $args;
+}
+add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
+
 /* Remove invalid rel attribute values in the categorylist
 *******************************************************************************/
 function remove_category_rel_from_category_list($thelist) {
@@ -77,7 +85,6 @@ remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0); // Remove shortlink
 // Add Filters
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
 add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
-add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
 add_filter('sanitize_file_name', 'remove_accents' ); // Santiize file name accent on upload
